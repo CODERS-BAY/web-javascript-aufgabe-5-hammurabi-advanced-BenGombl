@@ -257,15 +257,23 @@ form #growth, form #error{
 
 
     @media screen and (max-width: 900px){
+        ul#ressources{
+            margin:0;
+            margin-bottom: 0;
+            
+        }
         #ressources li{
             margin-left: 0;
             margin-right: 0;
+            
             border: 1px solid #aaa;
         }
         form{
             padding: 0;
             width: 100%;
             border: none;
+            height: 80vh;
+            margin: 0;
         }
         form button#play{
             width: 100%;
