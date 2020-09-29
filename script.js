@@ -22,7 +22,6 @@ function getMaxFeed() {
     document.getElementById("farm").max = corn - document.getElementById("feed").value;
     updateGrowth();
     updateError();
-
 }
 
 function getMaxFarm() {
@@ -30,7 +29,6 @@ function getMaxFarm() {
     document.getElementById("feed").max = corn - document.getElementById("farm").value;
     updateGrowth();
     updateError();
-
 }
 
 function updateGrowth() {
@@ -70,37 +68,33 @@ function updateRessources() {
 
 }
 
-
-
 function buyLand(amount) {
     if (land + amount < 0 || corn - amount * landPrice < 0) {
         return;
     } else {
         land += amount;
         corn -= landPrice * amount;
+        getMaxFarm();
+        getMaxFeed();
         updateGrowth();
         updateError();
         updateRessources();
-
         return;
     }
-
 }
 
 
 
 function playRound() {
-
-    if (!play||count) {
+    if (!play || count) {
         return;
     }
-    count = true;
 
+    count = true;
     landPrice = Math.ceil(Math.random() * 5) + 5 + year;
     harvest = 0;
     for (var i = 0; i < document.getElementById("farm").value; i += 2) {
         harvest += Math.ceil(Math.random() * 10);
-
     }
 
     feed += document.getElementById("feed").value - 20 * citizens;
@@ -130,9 +124,7 @@ function playRound() {
             clearInterval(interval);
             count = false;
             return;
-        }
-        
-        else if (harvest - i < 10) {
+        } else if (harvest - i < 10) {
             corn++;
             i++;
         } else if (harvest - i < 100) {
@@ -142,21 +134,13 @@ function playRound() {
             corn += 100;
             i += 100;
         }
-
         updateRessources();
-        
+
         return;
     }, 30);
     
     return;
-
 }
-
-
-
-
-
-
 
 function newGame() {
     document.getElementById("gameover").className = "hidden";
