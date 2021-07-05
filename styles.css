@@ -1,0 +1,302 @@
+.hidden{
+    display: none;
+}
+.visible{
+    display: block;
+}
+
+#error *{
+    color: red;
+    font-weight: bold;
+}
+
+quote::before, quote::after{
+    content: '"'
+}
+
+#gameover{
+    top: 0;
+    position: absolute;
+    background-color:#f5f5dcee;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+}
+
+#gameover p{
+    
+    margin-top: 30vh;
+    display: block;
+    
+    text-align: center;
+    font-size: 3rem;
+}
+
+#gameover button{
+    width: 25rem;
+    max-width: 90%;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 3rem;
+    padding: 2rem;
+    background-color: darkslategray;
+    color: #ccc;
+
+}
+#gameover button:hover{
+    color: white;
+    border: 1px solid darkslategray;
+}
+
+body{
+    margin: 0;
+    width: 100vw;
+    
+    position: absolute;
+    background-color: dimgray;
+    background-image: url("pics/babylon.webp");
+    background-size: cover;
+    
+}
+figure{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 350px;
+    border: 1px solid darkslategray;
+    border-radius: 1rem;
+    background-color: white;
+    margin: 15px;
+    z-index: 10;
+}
+figure figcaption{
+    padding: 2rem;
+}
+figure figcaption cite{
+    text-align: right;
+    display: block;
+}
+figure img{
+    width: 100%;
+    
+}
+
+#ressources{
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    background-color: darkslategray;
+    border-top: 5px solid black;
+    color: #ddd;
+    padding: 0.5rem;
+    margin:0;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    font-size: 2rem;
+}
+
+#ressources li{
+    margin-left: 0.4rem;
+    padding: 0 9px;
+    width: 14rem;
+    border: solid #aaa 3px;
+    border-bottom: none;
+    border-top: none;
+}
+
+#ressources li:last-child{
+    border-right: none;
+}
+#ressources li:first-child{
+    border-left: none;
+}
+
+
+
+
+form{
+    border: 6px solid slategray;
+    border-radius: 0.5rem;
+    background-color: #eeeeeebb;
+    padding: 1rem 5rem;
+    box-sizing: border-box;
+
+    width: 80%;
+    max-width: 80rem;
+    height: 80vh;
+    margin: auto;
+
+    font-size: 2.5rem;
+    display: block;
+    
+    
+}
+
+section.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    width: 40rem;
+    
+    margin: 0;
+    padding: 0;
+}
+
+section.buttons button:hover{
+    border: 1px solid white;
+    color: white;
+    background-color: #3f5f75;
+}
+
+section.buttons button{
+    width: 20rem;
+    margin: 0;
+    background-color: #2f4f65;
+    color: #ddd;
+    font-size: 2rem;
+    padding: 8px;
+}
+#growth{
+    padding-left: 10px;
+}
+section.planner{
+    margin-top: 3rem;
+    width: 100%;
+   
+    
+}
+section.planner .plan input{
+    
+    position: absolute;
+    right: 0;
+    font-size: 2rem;
+    text-align: center;
+    width: 12rem;
+    
+}
+
+section.planner .plan{
+    
+    position: relative;
+    
+    width: 40rem;
+}
+
+form button#play{
+    width: 40%;
+    background-color: beige;
+    border: 1px solid #aaa;
+    color: #555;
+    font-size: 3rem;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+form button#play:hover{
+    
+    border: 1px solid beige;
+    color: black;
+}
+
+form #growth, form #error{
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1500px){
+    figure{
+        display: none;
+    }
+
+    ul#ressources{
+        font-size: 1rem;
+        padding: 1px;
+    }
+
+    ul#ressources li{
+        width: 10rem;
+    }
+
+    form{
+        width: 98%;
+        padding: 0 1rem;
+        font-size: 1.3rem;
+    }
+
+    form section.buttons button, form .planner .plan input{
+        font-size: 1.3rem;
+        
+    }
+    form .planner .plan input{
+        width: 50%;
+    }
+
+    form>*{
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    form button#play{
+        width: 76%;
+    }
+    section.buttons{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        
+        margin: 0;
+        padding: 0;
+    }
+
+    section.buttons button{
+        width: 50%;
+        margin: 0;
+        background-color: #2f4f65;
+        color: #ddd;
+        font-size: 2rem;
+    }
+
+    section.planner .plan{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+    }
+
+
+    @media screen and (max-width: 900px){
+        ul#ressources{
+            margin:0;
+            border-bottom: 5px solid black;
+            border-top: none;
+        }
+        #ressources li{
+            margin-left: 0;
+            margin-right: 0;
+            
+            border: 1px solid #aaa;
+        }
+        form{
+            padding: 0;
+            width: 100%;
+            border: none;
+            height: 80vh;
+            margin: 0;
+        }
+        form button#play{
+            width: 100%;
+        }
+        section.planner .plan{
+            display: block;
+        }
+
+        section.planner .plan label, section.planner .plan input{
+            display: block;
+            position: relative;
+            width: 90%;
+            margin: auto;
+        }
+    }
+}

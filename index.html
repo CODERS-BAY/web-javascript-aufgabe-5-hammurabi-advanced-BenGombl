@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hammurabi</title>
+</head>
+
+<body>
+    <article>
+
+
+        <ul id="ressources">
+            <li id="corn">Corn: 6000</li>
+            <li id="citizens">Citizens: 100</li>
+            <li id="land">Land: 400</li>
+            <li id="landPrice">Land Price: 10</li>
+            <li id="year">Year: 0</li>
+
+        </ul>
+        <figure>
+            <img id="hammurabi" src="pics/hammurabi.jpg" alt="Hammurabi">
+            <figcaption>
+                <quote id="hammurabiSays">The first duty of government is to protect the powerless from the powerful.
+                </quote><br /><br />
+                <cite>Code of Hammurabi 1772 B.C</cite>
+            </figcaption>
+        </figure>
+
+    </article>
+    <article>
+
+
+        <form action="">
+
+            <section class="buttons">
+                <button onclick="buyLand(10)" type="button">buy 10 Land</button>
+
+                <button onclick="buyLand(-10)" type="button">sell 10 Land</button>
+                <button onclick="buyLand(100)" type="button">buy 100 Land</button>
+                <button onclick="buyLand(-100)" type="button">sell 100 Land</button>
+            </section>
+
+            <section class="planner">
+                <div class="plan">
+                    <label for="feed">Feed your People:</label>
+                    <input id="feed" name="feed" type="number" min="0" max="6000" value="2000" step="10">
+                </div>
+
+                <div class="plan">
+                    <label for="farm">Farm:</label>
+                    <input id="farm" name="farm" type="number" min="0" max="6000" value="0" step="2">
+                </div>
+
+
+
+            </section>
+            <button id="play" onclick="playRound()" type="button">Confirm Turn</button>
+
+
+            <p id="growth"></p>
+            <ul id="error" title="you can only farm 2 corn per field. each citizen can farm 10 fields."></ul>
+        </form>
+    </article>
+
+    <article class="hidden" id="gameover">
+        <p>you Lost!</p>
+        <button onclick="newGame()">New Game</button>
+    </article>
+
+</body>
+<script src="script.js"></script>
+
+</html>
